@@ -14,7 +14,7 @@ export default async function getDataApi({ brandId, lang, operativeSource }) {
     headers: myHeaders,
   };
   const getData = await fetch(
-    `https://qa-ms-vallartaadventures.vallartaplus.mx?lang=${lang}&brand_id=${brandId}&operative_source=${operativeSource}`,
+    `https://qa-ms-vallartaadventures.vallartaplus.mx/tour/list?lang=${lang}&brand_id=${brandId}&operative_source=${operativeSource}`,
     reqOption
   );
   return getData;

@@ -14,9 +14,10 @@ export const getData = async (req, res) => {
       }
       throw new Error(response);
     })
-    .then((response) => response.text())
+    .then((response) => response.json())
     .then((result) => {
-      return res.status(status).json(result);
+      const { tours } = result.content.data;
+      return res.status(status).json(tours);
     })
     .catch((error) => {
       return res.status(status).json(error);
